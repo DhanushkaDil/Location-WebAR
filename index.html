@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Location AR Showroom</title>
+  <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/three.js/build/ar-threex-location-only.js"></script>
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+</head>
+<body>
+  <a-scene
+    vr-mode-ui="enabled: false"
+    arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false"
+    renderer="antialias: true; alpha: true">
+
+    <a-camera gps-new-camera="gpsMinDistance: 2"></a-camera>
+
+    <!-- Your showroom, fixed to this latitude/longitude -->
+    <a-entity
+      gps-new-entity-place="latitude: 7.4867; longitude: 80.3647"
+      gltf-model="FashionShowroom_v1.glb"
+      scale="1 1 1"
+      position="0 -1.5 0"
+      rotation="0 0 0">
+    </a-entity>
+  </a-scene>
+</body>
+</html>
